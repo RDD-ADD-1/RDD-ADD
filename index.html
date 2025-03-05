@@ -1,65 +1,89 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<meta charset="utf-8">
+		<title>Leveraging Named Entity Knowledge for Robust Partial Audio Deepfake Detection via Attention Aggregation</title>
+		<link type="text/css" href="./css/basic.css" rel="stylesheet">
+		<link type="text/css" href="./css/index.css" rel="stylesheet">
+		<link type="text/css" href="./css/bootstrap.min.css" rel="stylesheet">
+		<script type='text/javascript' src="./js/jquery-3.3.1.min.js"></script>
+		<script type='text/javascript' src="./js/index.js"></script>
+		
+		
+		
+		
+		<style>
+		    .toggle-content {
+		      display: none; /* 默认隐藏内容 */
+		      margin-top: 10px;
+		    }
+		    .toggle-button {
+		      cursor: pointer;
+		      background-color: #007bff;
+		      color: white;
+		      border: none;
+		      padding: 5px 10px;
+		      border-radius: 3px;
+		      font-size: 14px;
+		    }
+		    .toggle-button:hover {
+		      background-color: #0056b3;
+		    }
+		    table {
+		      width: 100%;
+		      border-collapse: collapse;
+		      margin-top: 10px;
+		    }
+		    th, td {
+		      border: 1px solid #ccc;
+		      padding: 8px;
+		      text-align: center;
+		    }
+		  </style>
+		  
+		  <script>
+		    // 通用表格展开/折叠功能
+		    function toggleTable(tableId) {
+		      const table = document.getElementById(tableId);
+		      const button = document.querySelector(`button[onclick="toggleTable('${tableId}')"]`);
+		      if (table.style.display === 'none' || table.style.display === '') {
+		        table.style.display = 'block';
+		        button.textContent = button.textContent.replace('Show', 'Hide');
+		      } else {
+		        table.style.display = 'none';
+		        button.textContent = button.textContent.replace('Hide', 'Show');
+		      }
+		    }
+		  </script>
+		
+	</head>
+	<body>
+		<div class="main">
+			<!-- <div class="title">
+				<img class="top-img" src="1.png" />
+				<span>Hierarchical Multi-Source Cues Fusion for Mono-to-Binaural based Audio Deepfake Detection</span>
+			</div> -->
 
+			<!DOCTYPE html>
+<html lang="zh">
 <head>
-    <meta charset="utf-8">
-    <title>Retrieval-Based Deep Difference Modeling for Audio Deepfake Detection</title>
-    <link type="text/css" href="./css/basic.css" rel="stylesheet">
-    <link type="text/css" href="./css/index.css" rel="stylesheet">
-    <link type="text/css" href="./css/bootstrap.min.css" rel="stylesheet">
-    <script type='text/javascript' src="./js/jquery-3.3.1.min.js"></script>
-    <script type='text/javascript' src="./js/index.js"></script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片全宽 + 文字居中</title>
     <style>
-        .toggle-content {
-            display: none;
-            /* 默认隐藏内容 */
-            margin-top: 10px;
-        }
-
-        .toggle-button {
-            cursor: pointer;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 3px;
-            font-size: 14px;
-        }
-
-        .toggle-button:hover {
-            background-color: #0056b3;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-
-        th,
-        td {
-            border: 1px solid #ccc;
-            padding: 8px;
-            text-align: center;
-        }
-
         /* 让 title 区域相对定位 */
         .title {
             position: relative;
             width: 100%;
-            max-width: 100vw;
-            /* 防止超出视口 */
+            max-width: 100vw; /* 防止超出视口 */
             text-align: center;
         }
 
         /* 让图片横向撑满，高度限制 */
         .top-img {
             width: 100%;
-            max-height: 260px;
-            /* 限制最大高度 */
-            object-fit: cover;
-            /* 保持比例裁剪 */
+            max-height: 260px; /* 限制最大高度 */
+            object-fit: cover; /* 保持比例裁剪 */
             display: block;
         }
 
@@ -69,256 +93,247 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            color: white;
-            /* 文字纯白色 */
+            color: white; /* 文字纯白色 */
             font-size: 32px;
             font-weight: bold;
-            white-space: nowrap;
-            /* 防止换行 */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            /* 可选，让白字在亮背景上更清晰 */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 可选，让白字在亮背景上更清晰 */
         }
     </style>
-
-    <script>
-        // 通用表格展开/折叠功能
-        function toggleTable(tableId) {
-            const table = document.getElementById(tableId);
-            const button = document.querySelector(`button[onclick="toggleTable('${tableId}')"]`);
-            if (table.style.display === 'none' || table.style.display === '') {
-                table.style.display = 'block';
-                button.textContent = button.textContent.replace('Show', 'Hide');
-            } else {
-                table.style.display = 'none';
-                button.textContent = button.textContent.replace('Hide', 'Show');
-            }
-        }
-    </script>
-
 </head>
-
 <body>
-    <div class="main">
-        <div class="title">
-            <img class="top-img" src="1.png" alt="背景图片" />
-            <span>Retrieval-Based Deep Difference Modeling for Audio Deepfake Detection</span>
-        </div>
 
-        <br><br><br><br>
-
-        <div class="content">
-            <div class="section author"></div>
-            <div class="section">
-                <div class="section-title" style="font-weight: bold; text-align: left; font-size: 1.5rem;">Abstract</div>
-                <br>
-                <div class="section-content abstract"
-                    style="background-color: #e6f7ff; text-align: justify; padding: 1.5rem; border-radius: 8px; max-width: 2000px; margin: 0 auto; font-size: 1.2rem; line-height: 1.6;">
-                    With the rapid advancement of ultra-realistic audio deepfakes, Audio deepfake detection (ADD) has
-                    raised serious attention.
-                    In recent years, retrieval-based augmentation technology has shown great potential in enhancing ADD
-                    by providing additional contextual information.
-                    However, existing methods rely on a single database of bonafide audio, which makes it impossible to
-                    deeply learn the unbiased difference information
-                    between the audio to be detected, the bonafide audio, and the spoof audio.
-                    To address this, we propose the Retrieval-based Deep Difference Modeling for ADD, termed <b>RDD-ADD</b>,
-                    that integrates the following three novel mechanisms:
-                    (1) We proposed a new dual-database retrieval strategy, which jointly utilizes both bonafide and
-                    spoof databases to provide richer comparative information
-                    for the tested audio. (2) We incorporated Anchor-based similarity fusion and GRU-based contextual
-                    fusion mechanisms to perform targeted dynamic fusion of
-                    the retrieved features, enhancing their overall representational power.
-                    (3) We introduced a graph neural networks based deep difference feature learning strategy, to model
-                    the interactions between the tested audio and the
-                    retrieved samples and capture the fine-grained differences successfully.
-
-                    Using the above strategies, we can fully learn the in-depth differences between the audio to be
-                    tested and the bonafide audio and the spoof audio,
-                    so as to achieve robust ADD performance. Experimental results on multiple benchmarking datasets
-                    demonstrate that the proposed RDD-ADD outperforms
-                    various advanced baselines, providing a more effective solution for retrieval-based ADD. The codes
-                    are available at:
-                    <a href="https://github.com/AI-S2-Lab/RDD-ADD"
-                        style="font-weight: bold; color: #0056b3; font-size: 1.2rem;">https://github.com/AI-S2-Lab/RDD-ADD</a>.
-                </div>
-            </div>
-        </div>
-
-        <br><br><br><br>
-
-        <div class="section">
-            <div class="section-title" style="font-weight: bold; text-align: left; font-size: 1.5rem;">Model Architecture</div>
-            <br>
-            <div class="section-content model" style="text-align: center;">
-                <img src="r1.png" alt="" class="model-img" style="display: block; margin: 0 auto; max-width: 80%; height: auto;">
-
-                <p style="padding-top: 1rem; color: #a1a1a1; font-size: 1.3rem; text-align: center; max-width: 80%; margin: 0 auto;">
-                    Figure: Our RDD-ADD is divided into three stages: Figure (1) represents the process of constructing
-                    the dual-database, Figure (2) illustrates the retrieval process of the test audio from the
-                    dual-database and the targeted dynamic fusion of the retrieved features, and Figure (3) depicts the
-                    process of deep modeling the differences between the test audio and the retrieved real and spoof
-                    features.
-                </p>
-            </div>
-        </div>
-
-        <br><br><br><br>
-
-        <div class="section">
-            <div class="section-title" style="font-weight: bold; text-align: left; font-size: 1.5rem;">Examples of retrieved samples</div>
-            <div class="section-content">
-                <hr />
-                <div class="subsection-exp-2">
-                    <div class="module-content">
-                        <div id="tab1">
-                            <!-- 第一个表格：待测音频为真实示例 -->
-                            <div style="overflow-x: auto;">
-                                <table id="table_4" style="width: 100%; border-collapse: collapse; margin-bottom: 30px;">
-                                    <thead>
-                                        <tr>
-                                            <th colspan="2"
-                                                style="text-align: center; font-size: 1.2rem; padding: 10px; background-color: #D5E8D4;">
-                                                The test audio is a bonafide example: <audio
-                                                    src="Audio/bonafide/LA_T_1013597_query.wav" controls
-                                                    preload="none" style="max-width: 100%;"></audio>
-                                            </th>
-                                        </tr>
-                                        <tr>
-                                            <th style="text-align: center; font-size: 1.1rem;">Top-5 Most Similar Bonafide Audio</th>
-                                            <th style="text-align: center; font-size: 1.1rem;">Top-5 Most Similar Spoof Audio</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td style="text-align: center">
-                                                <audio src="Audio/bonafide/top5-bonafide/LA_T_8638376.wav" controls
-                                                    preload="none" style="max-width: 100%;"></audio>
-                                            </td>
-                                            <td style="text-align: center">
-                                                <audio src="Audio/bonafide/top5-spoof/LA_T_2818282.wav" controls
-                                                    preload="none" style="max-width: 100%;"></audio>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center">
-                                                <audio src="Audio/bonafide/top5-bonafide/LA_T_4097990.wav" controls
-                                                    preload="none" style="max-width: 100%;"></audio>
-                                            </td>
-                                            <td style="text-align: center">
-                                                <audio src="Audio/bonafide/top5-spoof/LA_T_8733540.wav" controls
-                                                    preload="none" style="max-width: 100%;"></audio>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center">
-                                                <audio src="Audio/bonafide/top5-bonafide/LA_T_7988057.wav" controls
-                                                    preload="none" style="max-width: 100%;"></audio>
-                                            </td>
-                                            <td style="text-align: center">
-                                                <audio src="Audio/bonafide/top5-spoof/LA_T_9391810.wav" controls
-                                                    preload="none" style="max-width: 100%;"></audio>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center">
-                                                <audio src="Audio/bonafide/top5-bonafide/LA_T_2189446.wav" controls
-                                                    preload="none" style="max-width: 100%;"></audio>
-                                            </td>
-                                            <td style="text-align: center">
-                                                <audio src="Audio/bonafide/top5-spoof/LA_T_1886741.wav" controls
-                                                    preload="none" style="max-width: 100%;"></audio>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center">
-                                                <audio src="Audio/bonafide/top5-bonafide/LA_T_3076054.wav" controls
-                                                    preload="none" style="max-width: 100%;"></audio>
-                                            </td>
-                                            <td style="text-align: center">
-                                                <audio src="Audio/bonafide/top5-spoof/LA_T_7120092.wav" controls
-                                                    preload="none" style="max-width: 100%;"></audio>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-
-                            <!-- 第二个表格：待测音频为伪造示例 -->
-                            <div style="overflow-x: auto;">
-                                <table id="table_5" style="width: 100%; border-collapse: collapse;">
-                                    <thead>
-                                        <tr>
-                                            <th colspan="2"
-                                                style="text-align: center; font-size: 1.2rem; padding: 10px; background-color: #fce6e6;">
-                                                The test audio is a spoof example: <audio
-                                                    src="Audio/spoof/LA_T_1004631_query.wav" controls
-                                                    preload="none" style="max-width: 100%;"></audio>
-                                            </th>
-                                        </tr>
-                                        <tr>
-                                            <th style="text-align: center; font-size: 1.1rem;">Top-5 Most Similar Bonafide Audio</th>
-                                            <th style="text-align: center; font-size: 1.1rem;">Top-5 Most Similar Spoof Audio</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td style="text-align: center">
-                                                <audio src="Audio/spoof/top5-bonafide/LA_T_1029184.wav" controls
-                                                    preload="none" style="max-width: 100%;"></audio>
-                                            </td>
-                                            <td style="text-align: center">
-                                                <audio src="Audio/spoof/top5-spoof/LA_T_7726932.wav" controls
-                                                    preload="none" style="max-width: 100%;"></audio>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center">
-                                                <audio src="Audio/spoof/top5-bonafide/LA_T_7465137.wav" controls
-                                                    preload="none" style="max-width: 100%;"></audio>
-                                            </td>
-                                            <td style="text-align: center">
-                                                <audio src="Audio/spoof/top5-spoof/LA_T_6156378.wav" controls
-                                                    preload="none" style="max-width: 100%;"></audio>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center">
-                                                <audio src="Audio/spoof/top5-bonafide/LA_T_7846284.wav" controls
-                                                    preload="none" style="max-width: 100%;"></audio>
-                                            </td>
-                                            <td style="text-align: center">
-                                                <audio src="Audio/spoof/top5-spoof/LA_T_8359382.wav" controls
-                                                    preload="none" style="max-width: 100%;"></audio>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center">
-                                                <audio src="Audio/spoof/top5-bonafide/LA_T_6298599.wav" controls
-                                                    preload="none" style="max-width: 100%;"></audio>
-                                            </td>
-                                            <td style="text-align: center">
-                                                <audio src="Audio/spoof/top5-spoof/LA_T_9280245.wav" controls
-                                                    preload="none" style="max-width: 100%;"></audio>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center">
-                                                <audio src="Audio/spoof/top5-bonafide/LA_T_8588034.wav" controls
-                                                    preload="none" style="max-width: 100%;"></audio>
-                                            </td>
-                                            <td style="text-align: center">
-                                                <audio src="Audio/spoof/top5-spoof/LA_T_2656291.wav" controls
-                                                    preload="none" style="max-width: 100%;"></audio>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="title">
+        <img class="top-img" src="1.png" alt="背景图片" />
+        <span>Retrieval-Based Deep Difference Modeling for Audio Deepfake Detection</span>
     </div>
-</body>
 
+</body>
+</html>
+
+<br><br><br><br>
+
+
+
+			<!-- <div class="content">
+				<div class="section author">
+				</div>
+				<div class="section">
+					<div class="section-title">ABSTRACT</div>
+					<div class="section-content abstract">
+						With the rapid advancement of ultra-realistic audio deepfakes, Audio deepfake detection (ADD) has raised serious attention. In recent years, retrieval-based augmentation technology has shown great potential in enhancing ADD by providing additional contextual information. However, existing methods rely on a single database of bonafide audio, which makes it impossible to deeply learn the unbiased difference information between the audio to be detected, the bonafide audio, and the spoof audio. To address this, we propose the Retrieval-based Deep Difference Modeling for ADD, termed \textbf{RDD-ADD}, that integrates the following three novel mechanisms: (1) We proposed a new dual-database retrieval strategy, which jointly utilizes both bonafide and spoof databases to provide richer comparative information for the tested audio. (2) We incorporated Anchor-based similarity fusion and GRU-based contextual fusion mechanisms to perform targeted dynamic fusion of the retrieved features, enhancing their overall representational power. (3) We introduced a graph neural networks based deep difference feature learning strategy, to model the interactions between the tested audio and the retrieved samples and capture the fine-grained differences successfully. 
+Using the above strategies, we can fully learn the in-depth differences between the audio to be tested and the bonafide audio and the spoof audio, so as to achieve robust ADD performance.
+Experimental results on multiple benchmarking datasets demonstrate that the proposed RDD-ADD outperforms various advanced baselines, providing a more effective solution for retrieval-based ADD.
+						<a href="https://github.com/AI-S2-Lab/RDD-ADD">https://github.com/AI-S2-Lab/RDD-ADD</a>. 
+					</div>
+				</div> -->
+
+				<div class="content">
+					<div class="section author"></div>
+					<div class="section">
+						<div class="section-title" style="font-weight: bold; text-align: left; font-size: 1.5rem;">Abstract</div>
+						<br>
+						<div class="section-content abstract" 
+							 style="background-color: #e6f7ff; text-align: justify; padding: 1.5rem; border-radius: 8px; 
+									max-width: 2000px; margin: 0 auto; font-size: 1.2rem; line-height: 1.6;">
+							With the rapid advancement of ultra-realistic audio deepfakes, Audio deepfake detection (ADD) has raised serious attention. 
+							In recent years, retrieval-based augmentation technology has shown great potential in enhancing ADD by providing additional contextual information. 
+							However, existing methods rely on a single database of bonafide audio, which makes it impossible to deeply learn the unbiased difference information 
+							between the audio to be detected, the bonafide audio, and the spoof audio. 
+							To address this, we propose the Retrieval-based Deep Difference Modeling for ADD, termed <b>RDD-ADD</b>, that integrates the following three novel mechanisms: 
+							(1) We proposed a new dual-database retrieval strategy, which jointly utilizes both bonafide and spoof databases to provide richer comparative information 
+							for the tested audio. (2) We incorporated Anchor-based similarity fusion and GRU-based contextual fusion mechanisms to perform targeted dynamic fusion of 
+							the retrieved features, enhancing their overall representational power. 
+							(3) We introduced a graph neural networks based deep difference feature learning strategy, to model the interactions between the tested audio and the 
+							retrieved samples and capture the fine-grained differences successfully. 
+				
+							Using the above strategies, we can fully learn the in-depth differences between the audio to be tested and the bonafide audio and the spoof audio, 
+							so as to achieve robust ADD performance. Experimental results on multiple benchmarking datasets demonstrate that the proposed RDD-ADD outperforms 
+							various advanced baselines, providing a more effective solution for retrieval-based ADD. The codes are available at:
+							<a href="https://github.com/AI-S2-Lab/RDD-ADD" style="font-weight: bold; color: #0056b3; font-size: 1.2rem;">https://github.com/AI-S2-Lab/RDD-ADD</a>.
+						</div>
+					</div>
+				</div>
+				
+				
+				
+				<br><br><br><br>
+				
+				<!-- <div class="section">
+					<div class="section-title">MODEL ARCHITECTURE</div>
+					<div class="section-content model">
+						<img src="r1.png" alt="" class="model-img">
+						<p style="padding-top: 1rem; color: #a1a1a1; font-size: 1rem; text-align: center;">Figure:Our RDD-ADD is divided into three stages: Figure (1) represents the process of constructing the dual-database, Figure (2) illustrates the retrieval process of the test audio from the dual-database and the targeted dynamic fusion of the retrieved features, and Figure (3) depicts the process of deep modeling the differences between the test audio and the retrieved real and spoof features.</p>
+					</div>
+				</div> -->
+
+				<div class="section">
+					<!-- <div class="section-title">MODEL ARCHITECTURE</div> -->
+					<div class="section-title" style="font-weight: bold; text-align: left; font-size: 1.5rem;">Model Architecture</div>
+					<br>
+					<div class="section-content model" style="text-align: center;">
+						<img src="r1.png" alt="" class="model-img" style="display: block; margin: 0 auto; max-width: 80%; height: auto;">
+						
+						<p style="padding-top: 1rem; color: #a1a1a1; font-size: 1.3rem; text-align: center; max-width: 80%; margin: 0 auto;">
+							Figure: Our RDD-ADD is divided into three stages: Figure (1) represents the process of constructing the dual-database, Figure (2) illustrates the retrieval process of the test audio from the dual-database and the targeted dynamic fusion of the retrieved features, and Figure (3) depicts the process of deep modeling the differences between the test audio and the retrieved real and spoof features.
+						</p>
+					</div>
+				</div>
+				
+				<br><br><br><br>
+				
+				<div class="section">
+					<div class="section-title" style="font-weight: bold; text-align: left; font-size: 1.5rem;">Examples of retrieved samples</div>
+					<div class="section-content">
+						<hr />
+						<div class="subsection-exp-2">
+							<div class="module-content">
+								<div id="tab1">
+									<!-- 第一个表格：待测音频为真实示例 -->
+									<table id="table_4" style="width: 100%; border-collapse: collapse; margin-bottom: 30px;">
+										<thead>
+											<tr>
+												<th colspan="2" style="text-align: center; font-size: 1.2rem; padding: 10px; background-color: #D5E8D4;">
+													The test audio is a bonafide example: <audio src="Audio/bonafide/LA_T_1013597_query.wav" controls preload="none"></audio>
+												</th>
+											</tr>
+											<tr>
+												<th style="text-align: center; font-size: 1.1rem;">Top-5 Most Similar Bonafide Audio</th>
+												<th style="text-align: center; font-size: 1.1rem;">Top-5 Most Similar Spoof Audio</th>
+											</tr>
+										</thead>
+										<tbody>
+											<!-- <tr>
+												<td style="text-align: center">So Levin was later charged with her murder.</td>
+												<td style="text-align: center">But he was never thought for where the Lee Chamber or the board.</td>
+											</tr> -->
+											<tr>
+												<td style="text-align: center">
+													<audio src="Audio/bonafide/top5-bonafide/LA_T_8638376.wav" controls preload="none"></audio>
+												</td>
+												<td style="text-align: center">
+													<audio src="Audio/bonafide/top5-spoof/LA_T_2818282.wav" controls preload="none"></audio>
+												</td>
+											</tr>
+											<!-- <tr>
+												<td style="text-align: center">A bright private matter between the Firm and Airstall.</td>
+												<td style="text-align: center">But he has goodest dreams for Hoseo.</td>
+											</tr> -->
+											<tr>
+												<td style="text-align: center">
+													<audio src="Audio/bonafide/top5-bonafide/LA_T_4097990.wav" controls preload="none"></audio>
+												</td>
+												<td style="text-align: center">
+													<audio src="Audio/bonafide/top5-spoof/LA_T_8733540.wav" controls preload="none"></audio>
+												</td>
+											</tr>
+											<tr>
+												<td style="text-align: center">
+													<audio src="Audio/bonafide/top5-bonafide/LA_T_7988057.wav" controls preload="none"></audio>
+												</td>
+												<td style="text-align: center">
+													<audio src="Audio/bonafide/top5-spoof/LA_T_9391810.wav" controls preload="none"></audio>
+												</td>
+											</tr>
+											<tr>
+												<td style="text-align: center">
+													<audio src="Audio/bonafide/top5-bonafide/LA_T_2189446.wav" controls preload="none"></audio>
+												</td>
+												<td style="text-align: center">
+													<audio src="Audio/bonafide/top5-spoof/LA_T_1886741.wav" controls preload="none"></audio>
+												</td>
+											</tr>
+											<!-- <tr>
+												<td style="text-align: center">Jackson may well be right.</td>
+												<td style="text-align: center">Another example of retrieved spoof audio.</td>
+											</tr> -->
+											<tr>
+												<td style="text-align: center">
+													<audio src="Audio/bonafide/top5-bonafide/LA_T_3076054.wav" controls preload="none"></audio>
+												</td>
+												<td style="text-align: center">
+													<audio src="Audio/bonafide/top5-spoof/LA_T_7120092.wav" controls preload="none"></audio>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+				
+									<!-- 第二个表格：待测音频为伪造示例 -->
+									<table id="table_5" style="width: 100%; border-collapse: collapse;">
+										<thead>
+											<tr>
+												<th colspan="2" style="text-align: center; font-size: 1.2rem; padding: 10px; background-color: #fce6e6;">
+													The test audio is a spoof example: <audio src="Audio/spoof/LA_T_1004631_query.wav" controls preload="none"></audio>
+												</th>
+											</tr>
+											<tr>
+												<th style="text-align: center; font-size: 1.1rem;">Top-5 Most Similar Bonafide Audio</th>
+												<th style="text-align: center; font-size: 1.1rem;">Top-5 Most Similar Spoof Audio</th>
+											</tr>
+										</thead>
+										<tbody>
+											<!-- <tr>
+												<td style="text-align: center">This is an example bonafide audio.</td>
+												<td style="text-align: center">This is an example spoof audio.</td>
+											</tr> -->
+											<tr>
+												<td style="text-align: center">
+													<audio src="Audio/spoof/top5-bonafide/LA_T_1029184.wav" controls preload="none"></audio>
+												</td>
+												<td style="text-align: center">
+													<audio src="Audio/spoof/top5-spoof/LA_T_7726932.wav" controls preload="none"></audio>
+												</td>
+											</tr>
+											<!-- <tr>
+												<td style="text-align: center">Another bonafide example.</td>
+												<td style="text-align: center">Another spoofed example.</td>
+											</tr> -->
+											<tr>
+												<td style="text-align: center">
+													<audio src="Audio/spoof/top5-bonafide/LA_T_7465137.wav" controls preload="none"></audio>
+												</td>
+												<td style="text-align: center">
+													<audio src="Audio/spoof/top5-spoof/LA_T_6156378.wav" controls preload="none"></audio>
+												</td>
+											</tr>
+											<!-- <tr>
+												<td style="text-align: center">Bonafide audio from dataset.</td>
+												<td style="text-align: center">Spoof audio from dataset.</td>
+											</tr> -->
+											<tr>
+												<td style="text-align: center">
+													<audio src="Audio/spoof/top5-bonafide/LA_T_7846284.wav" controls preload="none"></audio>
+												</td>
+												<td style="text-align: center">
+													<audio src="Audio/spoof/top5-spoof/LA_T_8359382.wav" controls preload="none"></audio>
+												</td>
+											</tr>
+											<tr>
+												<td style="text-align: center">
+													<audio src="Audio/spoof/top5-bonafide/LA_T_6298599.wav" controls preload="none"></audio>
+												</td>
+												<td style="text-align: center">
+													<audio src="Audio/spoof/top5-spoof/LA_T_9280245.wav" controls preload="none"></audio>
+												</td>
+											</tr>
+											<tr>
+												<td style="text-align: center">
+													<audio src="Audio/spoof/top5-bonafide/LA_T_8588034.wav" controls preload="none"></audio>
+												</td>
+												<td style="text-align: center">
+													<audio src="Audio/spoof/top5-spoof/LA_T_2656291.wav" controls preload="none"></audio>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+
+		
+		
+	</body>
 </html>
