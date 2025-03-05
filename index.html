@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Retrieval-Based Deep Difference Modeling for Audio Deepfake Detection</title>
     <link type="text/css" href="./css/basic.css" rel="stylesheet">
     <link type="text/css" href="./css/index.css" rel="stylesheet">
@@ -12,80 +11,26 @@
     <script type='text/javascript' src="./js/index.js"></script>
 
     <style>
-        /* 通用样式 */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+        .toggle-content {
+            display: none;
+            /* 默认隐藏内容 */
+            margin-top: 10px;
         }
 
-        .main {
-            padding: 15px;
-        }
-
-        /* 标题样式 */
-        .title {
-            position: relative;
-            width: 100%;
-            text-align: center;
-        }
-
-        .top-img {
-            width: 100%;
-            max-height: 260px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .title span {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        .toggle-button {
+            cursor: pointer;
+            background-color: #007bff;
             color: white;
-            font-size: 32px;
-            font-weight: bold;
-            /* white-space: nowrap; */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 14px;
         }
 
-        /* 内容区域样式 */
-        .content {
-            margin-top: 20px;
+        .toggle-button:hover {
+            background-color: #0056b3;
         }
 
-        .section {
-            margin-bottom: 30px;
-        }
-
-        .section-title {
-            font-weight: bold;
-            text-align: left;
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        .section-content {
-            text-align: justify;
-        }
-
-        /* 摘要样式 */
-        .abstract {
-            background-color: #e6f7ff;
-            padding: 15px;
-            border-radius: 8px;
-            line-height: 1.6;
-        }
-
-        /* 模型架构图片样式 */
-        .model-img {
-            display: block;
-            margin: 0 auto;
-            max-width: 100%;
-            height: auto;
-        }
-
-        /* 表格样式 */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -99,28 +44,39 @@
             text-align: center;
         }
 
-        /* 音频播放器样式 */
-        audio {
-            max-width: 100%;
+        /* 让 title 区域相对定位 */
+        .title {
+            position: relative;
+            width: 100%;
+            max-width: 100vw;
+            /* 防止超出视口 */
+            text-align: center;
         }
 
-        /* 响应式设计 - 手机端样式 */
-        @media (max-width: 767px) {
-            .title span {
-                font-size: 18px;
-            }
+        /* 让图片横向撑满，高度限制 */
+        .top-img {
+            width: 100%;
+            max-height: 260px;
+            /* 限制最大高度 */
+            object-fit: cover;
+            /* 保持比例裁剪 */
+            display: block;
+        }
 
-            .section-title {
-                font-size: 1.2rem;
-            }
-
-            .abstract {
-                font-size: 1rem;
-            }
-
-            .section-content p {
-                font-size: 1rem;
-            }
+        /* 让文字居中浮动在图片上 */
+        .title span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            /* 文字纯白色 */
+            font-size: 32px;
+            font-weight: bold;
+            white-space: nowrap;
+            /* 防止换行 */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            /* 可选，让白字在亮背景上更清晰 */
         }
     </style>
 
@@ -148,11 +104,15 @@
             <span>Retrieval-Based Deep Difference Modeling for Audio Deepfake Detection</span>
         </div>
 
+        <br><br><br><br>
+
         <div class="content">
             <div class="section author"></div>
             <div class="section">
-                <div class="section-title">Abstract</div>
-                <div class="section-content abstract">
+                <div class="section-title" style="font-weight: bold; text-align: left; font-size: 1.5rem;">Abstract</div>
+                <br>
+                <div class="section-content abstract"
+                    style="background-color: #e6f7ff; text-align: justify; padding: 1.5rem; border-radius: 8px; max-width: 2000px; margin: 0 auto; font-size: 1.2rem; line-height: 1.6;">
                     With the rapid advancement of ultra-realistic audio deepfakes, Audio deepfake detection (ADD) has
                     raised serious attention.
                     In recent years, retrieval-based augmentation technology has shown great potential in enhancing ADD
@@ -177,163 +137,182 @@
                     demonstrate that the proposed RDD-ADD outperforms
                     various advanced baselines, providing a more effective solution for retrieval-based ADD. The codes
                     are available at:
-                    <a href="https://github.com/AI-S2-Lab/RDD-ADD">https://github.com/AI-S2-Lab/RDD-ADD</a>.
+                    <a href="https://github.com/AI-S2-Lab/RDD-ADD"
+                        style="font-weight: bold; color: #0056b3; font-size: 1.2rem;">https://github.com/AI-S2-Lab/RDD-ADD</a>.
                 </div>
             </div>
         </div>
 
+        <br><br><br><br>
+
         <div class="section">
-            <div class="section-title">Model Architecture</div>
-            <div class="section-content model">
-                <img src="r1.png" alt="" class="model-img">
-                <p>Figure: Our RDD-ADD is divided into three stages: Figure (1) represents the process of constructing
+            <div class="section-title" style="font-weight: bold; text-align: left; font-size: 1.5rem;">Model Architecture</div>
+            <br>
+            <div class="section-content model" style="text-align: center;">
+                <img src="r1.png" alt="" class="model-img" style="display: block; margin: 0 auto; max-width: 80%; height: auto;">
+
+                <p style="padding-top: 1rem; color: #a1a1a1; font-size: 1.3rem; text-align: center; max-width: 80%; margin: 0 auto;">
+                    Figure: Our RDD-ADD is divided into three stages: Figure (1) represents the process of constructing
                     the dual-database, Figure (2) illustrates the retrieval process of the test audio from the
                     dual-database and the targeted dynamic fusion of the retrieved features, and Figure (3) depicts the
                     process of deep modeling the differences between the test audio and the retrieved real and spoof
-                    features.</p>
+                    features.
+                </p>
             </div>
         </div>
 
+        <br><br><br><br>
+
         <div class="section">
-            <div class="section-title">Examples of retrieved samples</div>
+            <div class="section-title" style="font-weight: bold; text-align: left; font-size: 1.5rem;">Examples of retrieved samples</div>
             <div class="section-content">
                 <hr />
                 <div class="subsection-exp-2">
                     <div class="module-content">
                         <div id="tab1">
                             <!-- 第一个表格：待测音频为真实示例 -->
-                            <table id="table_4">
-                                <thead>
-                                    <tr>
-                                        <th colspan="2">The test audio is a bonafide example: <audio
-                                                src="/Audio/bonafide/LA_T_1013597_query.wav" controls
-                                                preload="none"></audio></th>
-                                    </tr>
-                                    <tr>
-                                        <th>Top-5 Most Similar Bonafide Audio</th>
-                                        <th>Top-5 Most Similar Spoof Audio</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <audio src="/Audio/bonafide/top5-bonafide/LA_T_8638376.wav" controls
-                                                preload="none"></audio>
-                                        </td>
-                                        <td>
-                                            <audio src="/Audio/bonafide/top5-spoof/LA_T_2818282.wav" controls
-                                                preload="none"></audio>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <audio src="/Audio/bonafide/top5-bonafide/LA_T_4097990.wav" controls
-                                                preload="none"></audio>
-                                        </td>
-                                        <td>
-                                            <audio src="/Audio/bonafide/top5-spoof/LA_T_8733540.wav" controls
-                                                preload="none"></audio>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <audio src="/Audio/bonafide/top5-bonafide/LA_T_7988057.wav" controls
-                                                preload="none"></audio>
-                                        </td>
-                                        <td>
-                                            <audio src="/Audio/bonafide/top5-spoof/LA_T_9391810.wav" controls
-                                                preload="none"></audio>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <audio src="/Audio/bonafide/top5-bonafide/LA_T_2189446.wav" controls
-                                                preload="none"></audio>
-                                        </td>
-                                        <td>
-                                            <audio src="/Audio/bonafide/top5-spoof/LA_T_1886741.wav" controls
-                                                preload="none"></audio>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <audio src="/Audio/bonafide/top5-bonafide/LA_T_3076054.wav" controls
-                                                preload="none"></audio>
-                                        </td>
-                                        <td>
-                                            <audio src="/Audio/bonafide/top5-spoof/LA_T_7120092.wav" controls
-                                                preload="none"></audio>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div style="overflow-x: auto;">
+                                <table id="table_4" style="width: 100%; border-collapse: collapse; margin-bottom: 30px;">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="2"
+                                                style="text-align: center; font-size: 1.2rem; padding: 10px; background-color: #D5E8D4;">
+                                                The test audio is a bonafide example: <audio
+                                                    src="/Audio/bonafide/LA_T_1013597_query.wav" controls
+                                                    preload="none" style="max-width: 100%;"></audio>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th style="text-align: center; font-size: 1.1rem;">Top-5 Most Similar Bonafide Audio</th>
+                                            <th style="text-align: center; font-size: 1.1rem;">Top-5 Most Similar Spoof Audio</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="text-align: center">
+                                                <audio src="/Audio/bonafide/top5-bonafide/LA_T_8638376.wav" controls
+                                                    preload="none" style="max-width: 100%;"></audio>
+                                            </td>
+                                            <td style="text-align: center">
+                                                <audio src="/Audio/bonafide/top5-spoof/LA_T_2818282.wav" controls
+                                                    preload="none" style="max-width: 100%;"></audio>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center">
+                                                <audio src="/Audio/bonafide/top5-bonafide/LA_T_4097990.wav" controls
+                                                    preload="none" style="max-width: 100%;"></audio>
+                                            </td>
+                                            <td style="text-align: center">
+                                                <audio src="/Audio/bonafide/top5-spoof/LA_T_8733540.wav" controls
+                                                    preload="none" style="max-width: 100%;"></audio>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center">
+                                                <audio src="/Audio/bonafide/top5-bonafide/LA_T_7988057.wav" controls
+                                                    preload="none" style="max-width: 100%;"></audio>
+                                            </td>
+                                            <td style="text-align: center">
+                                                <audio src="/Audio/bonafide/top5-spoof/LA_T_9391810.wav" controls
+                                                    preload="none" style="max-width: 100%;"></audio>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center">
+                                                <audio src="/Audio/bonafide/top5-bonafide/LA_T_2189446.wav" controls
+                                                    preload="none" style="max-width: 100%;"></audio>
+                                            </td>
+                                            <td style="text-align: center">
+                                                <audio src="/Audio/bonafide/top5-spoof/LA_T_1886741.wav" controls
+                                                    preload="none" style="max-width: 100%;"></audio>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center">
+                                                <audio src="/Audio/bonafide/top5-bonafide/LA_T_3076054.wav" controls
+                                                    preload="none" style="max-width: 100%;"></audio>
+                                            </td>
+                                            <td style="text-align: center">
+                                                <audio src="/Audio/bonafide/top5-spoof/LA_T_7120092.wav" controls
+                                                    preload="none" style="max-width: 100%;"></audio>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
 
                             <!-- 第二个表格：待测音频为伪造示例 -->
-                            <table id="table_5">
-                                <thead>
-                                    <tr>
-                                        <th colspan="2">The test audio is a spoof example: <audio
-                                                src="/Audio/spoof/LA_T_1004631_query.wav" controls
-                                                preload="none"></audio></th>
-                                    </tr>
-                                    <tr>
-                                        <th>Top-5 Most Similar Bonafide Audio</th>
-                                        <th>Top-5 Most Similar Spoof Audio</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <audio src="/Audio/spoof/top5-bonafide/LA_T_1029184.wav" controls
-                                                preload="none"></audio>
-                                        </td>
-                                        <td>
-                                            <audio src="/Audio/spoof/top5-spoof/LA_T_7726932.wav" controls
-                                                preload="none"></audio>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <audio src="/Audio/spoof/top5-bonafide/LA_T_7465137.wav" controls
-                                                preload="none"></audio>
-                                        </td>
-                                        <td>
-                                            <audio src="/Audio/spoof/top5-spoof/LA_T_6156378.wav" controls
-                                                preload="none"></audio>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <audio src="/Audio/spoof/top5-bonafide/LA_T_7846284.wav" controls
-                                                preload="none"></audio>
-                                        </td>
-                                        <td>
-                                            <audio src="/Audio/spoof/top5-spoof/LA_T_8359382.wav" controls
-                                                preload="none"></audio>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <audio src="/Audio/spoof/top5-bonafide/LA_T_6298599.wav" controls
-                                                preload="none"></audio>
-                                        </td>
-                                        <td>
-                                            <audio src="/Audio/spoof/top5-spoof/LA_T_9280245.wav" controls
-                                                preload="none"></audio>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <audio src="/Audio/spoof/top5-bonafide/LA_T_8588034.wav" controls
-                                                preload="none"></audio>
-                                        </td>
-                                        <td>
-                                            <audio src="/Audio/spoof/top5-spoof/LA_T_2656291.wav" controls
-                                                preload="none"></audio>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div style="overflow-x: auto;">
+                                <table id="table_5" style="width: 100%; border-collapse: collapse;">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="2"
+                                                style="text-align: center; font-size: 1.2rem; padding: 10px; background-color: #fce6e6;">
+                                                The test audio is a spoof example: <audio
+                                                    src="/Audio/spoof/LA_T_1004631_query.wav" controls
+                                                    preload="none" style="max-width: 100%;"></audio>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th style="text-align: center; font-size: 1.1rem;">Top-5 Most Similar Bonafide Audio</th>
+                                            <th style="text-align: center; font-size: 1.1rem;">Top-5 Most Similar Spoof Audio</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="text-align: center">
+                                                <audio src="/Audio/spoof/top5-bonafide/LA_T_1029184.wav" controls
+                                                    preload="none" style="max-width: 100%;"></audio>
+                                            </td>
+                                            <td style="text-align: center">
+                                                <audio src="/Audio/spoof/top5-spoof/LA_T_7726932.wav" controls
+                                                    preload="none" style="max-width: 100%;"></audio>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center">
+                                                <audio src="/Audio/spoof/top5-bonafide/LA_T_7465137.wav" controls
+                                                    preload="none" style="max-width: 100%;"></audio>
+                                            </td>
+                                            <td style="text-align: center">
+                                                <audio src="/Audio/spoof/top5-spoof/LA_T_6156378.wav" controls
+                                                    preload="none" style="max-width: 100%;"></audio>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center">
+                                                <audio src="/Audio/spoof/top5-bonafide/LA_T_7846284.wav" controls
+                                                    preload="none" style="max-width: 100%;"></audio>
+                                            </td>
+                                            <td style="text-align: center">
+                                                <audio src="/Audio/spoof/top5-spoof/LA_T_8359382.wav" controls
+                                                    preload="none" style="max-width: 100%;"></audio>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center">
+                                                <audio src="/Audio/spoof/top5-bonafide/LA_T_6298599.wav" controls
+                                                    preload="none" style="max-width: 100%;"></audio>
+                                            </td>
+                                            <td style="text-align: center">
+                                                <audio src="/Audio/spoof/top5-spoof/LA_T_9280245.wav" controls
+                                                    preload="none" style="max-width: 100%;"></audio>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center">
+                                                <audio src="/Audio/spoof/top5-bonafide/LA_T_8588034.wav" controls
+                                                    preload="none" style="max-width: 100%;"></audio>
+                                            </td>
+                                            <td style="text-align: center">
+                                                <audio src="/Audio/spoof/top5-spoof/LA_T_2656291.wav" controls
+                                                    preload="none" style="max-width: 100%;"></audio>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
