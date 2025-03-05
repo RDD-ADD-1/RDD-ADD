@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- 设置视口宽度为固定值，禁止用户缩放 -->
-    <meta name="viewport" content="width=1600, initial-scale=1.0, user-scalable=no">
-    <title>Retrieval-Based Deep Difference Modeling for Audio Deepfake Detection</title>
+    <!-- 设置视口宽度为设备宽度，初始缩放比例为 1，禁止用户缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Leveraging Named Entity Knowledge for Robust Partial Audio Deepfake Detection via Attention Aggregation</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <style>
         /* 整体布局 */
@@ -16,9 +16,6 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            /* 增加页面宽度 */
-            width: 1600px;
-            margin: 0 auto;
         }
 
        .main {
@@ -29,8 +26,7 @@
         /* 标题部分 */
        .title {
             position: relative;
-            /* 固定标题宽度 */
-            width: 1600px;
+            width: 100%;
             text-align: center;
         }
 
@@ -67,7 +63,8 @@
             text-align: justify;
             padding: 1.5rem;
             border-radius: 8px;
-            max-width: 2000px;
+            /* 设置最大宽度，保证内容可读性 */
+            max-width: 1600px;
             margin: 0 auto;
             font-size: 1.2rem;
             line-height: 1.6;
@@ -116,6 +113,8 @@
             <span>Retrieval-Based Deep Difference Modeling for Audio Deepfake Detection</span>
         </div>
 
+		<br><br>
+
         <!-- 摘要部分 -->
         <div class="section">
             <div class="section-title">Abstract</div>
@@ -137,6 +136,8 @@
                 <a href="https://github.com/AI-S2-Lab/RDD-ADD" style="font-weight: bold; color: #0056b3; font-size: 1.2rem;">https://github.com/AI-S2-Lab/RDD-ADD</a>.
             </div>
         </div>
+
+		<br><br>
 
         <!-- 模型架构部分 -->
         <div class="section">
