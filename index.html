@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 设置视口宽度为固定值，禁止用户缩放 -->
+    <meta name="viewport" content="width=1600, initial-scale=1.0, user-scalable=no">
     <title>Retrieval-Based Deep Difference Modeling for Audio Deepfake Detection</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <style>
@@ -15,6 +16,9 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            /* 增加页面宽度 */
+            width: 1600px;
+            margin: 0 auto;
         }
 
        .main {
@@ -25,8 +29,8 @@
         /* 标题部分 */
        .title {
             position: relative;
-            width: 100%;
-            max-width: 100vw;
+            /* 固定标题宽度 */
+            width: 1600px;
             text-align: center;
         }
 
