@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- 设置视口宽度为设备宽度，禁止用户缩放 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Retrieval-Based Deep Difference Modeling for Audio Deepfake Detection</title>
+    <!-- 设置视口宽度为固定值，禁止用户缩放 -->
+    <meta name="viewport" content="width=1600, initial-scale=1.0, user-scalable=no">
+    <title>Leveraging Named Entity Knowledge for Robust Partial Audio Deepfake Detection via Attention Aggregation</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <style>
         /* 整体布局 */
@@ -16,7 +16,8 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            width: 100%; /* 使用相对单位，宽度自适应 */
+            /* 增加页面宽度 */
+            width: 1600px;
             margin: 0 auto;
         }
 
@@ -28,7 +29,8 @@
         /* 标题部分 */
        .title {
             position: relative;
-            width: 100%; /* 使用相对单位，宽度自适应 */
+            /* 固定标题宽度 */
+            width: 1600px;
             text-align: center;
         }
 
@@ -65,7 +67,7 @@
             text-align: justify;
             padding: 1.5rem;
             border-radius: 8px;
-            max-width: 100%; /* 使用相对单位，宽度自适应 */
+            max-width: 2000px;
             margin: 0 auto;
             font-size: 1.2rem;
             line-height: 1.6;
@@ -79,7 +81,7 @@
        .model-img {
             display: block;
             margin: 0 auto;
-            max-width: 100%; /* 使用相对单位，宽度自适应 */
+            max-width: 80%;
             height: auto;
         }
 
@@ -102,21 +104,6 @@
             width: 100%;
             max-width: 300px;
             margin-bottom: 10px;
-        }
-
-        /* 媒体查询，针对手机屏幕宽度进行样式调整 */
-        @media (max-width: 768px) {
-           .section-content {
-                font-size: 1rem;
-            }
-
-           .section-title {
-                font-size: 1.3rem;
-            }
-
-           .title span {
-                font-size: 24px;
-            }
         }
     </style>
 </head>
@@ -156,7 +143,7 @@
             <div class="section-title">Model Architecture</div>
             <div class="section-content model">
                 <img src="r1.png" alt="" class="model-img">
-                <p style="padding-top: 1rem; color: #a1a1a1; font-size: 1.3rem; text-align: center; max-width: 100%; margin: 0 auto;">
+                <p style="padding-top: 1rem; color: #a1a1a1; font-size: 1.3rem; text-align: center; max-width: 80%; margin: 0 auto;">
                     Figure: Our RDD-ADD is divided into three stages: Figure (1) represents the process of constructing the dual-database, Figure (2) illustrates the retrieval process of the test audio from the dual-database and the targeted dynamic fusion of the retrieved features, and Figure (3) depicts the process of deep modeling the differences between the test audio and the retrieved real and spoof features.
                 </p>
             </div>
